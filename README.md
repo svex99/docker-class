@@ -4,6 +4,12 @@
 
 Docker brinda la capacidad de empaquetar y ejecutar una aplicación en un entorno aislado llamado contenedor. Los contenedores son livianos y contienen todo lo necesario para ejecutar la aplicación, por lo que no dependen de lo que está instalado en el host. Además, se pueden compartir fácilmente y asegurarse de que todas las personas con las que se comparte obtengan una versión que funciona de la misma manera. Adicionalmente permite manejar la infraestructura de la misma forma que se manejan las aplicaciones, lo que disminuye el tiempo entre escribir el código y llevarlo a producción.
 
+## Instalación
+
+El proceso de instalación es específico para la plataforma en que se vaya a usar. Para realizarlo es recomendable ir a la documentación oficial pues puede sufrir actualizaciones o modificaciones.
+
+Siga los pasos de acuerdo a su sistema operativo e instale Docker desde [aquí](https://docs.docker.com/get-docker/).
+
 ## Objetos de Docker
 
 ### Imágenes
@@ -228,6 +234,10 @@ Dockerfile  main.py  requirements.txt
 Sí se añade una archivo a este directorio, por ejemplo ejecutando `touch file.txt` este estará disponible dentro del contenedor.
 
 Puede obtener más información sobre como manejar volúmenes en la [documentación oficial](https://docs.docker.com/storage/volumes/).
+
+### Otros objetos
+
+Además existen otro objetos como redes, plugins, etc. los cuales ofrecen más funcionalidades pero que están fuera del alcance de esta introducción.
 
 ## Tarea Propuesta
 

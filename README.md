@@ -36,9 +36,9 @@ RUN pip3 install -r requirements.txt
 CMD ["python3", "main.py"]
 ```
 
-Cada una de estas instrucciones crea una capa en la imagen. Por ejemplo si otra imagen también tiene como imagen base `FROM python:3.10` compartirá junto con la anterior el mismo espacio en disco para esa capa.
+Cada una de estas instrucciones crea una capa en la imagen. Por ejemplo si otra imagen también tiene como imagen base `FROM python:3.9.5` compartirá junto con la anterior el mismo espacio en disco para esa capa.
 
-> 💡 Puede descargar las imágenes de Docker sin consumo de internet a través del proxy de la UCLV `docker.uclv.cu`. Por ejemplo en el Dockerfile anterior puede usar la imagen base: `FROM docker.uclv.cu/python:3.10`.
+> 💡 Puede descargar las imágenes de Docker sin consumo de internet a través del proxy de la UCLV `docker.uclv.cu`. Por ejemplo en el Dockerfile anterior puede usar la imagen base: `FROM docker.uclv.cu/python:3.9.5`.
 
 > 💡 Puede instalar las dependencias en Python sin consumo de internet a través del proxy de la UCI `http://nexus.prod.uci.cu/repository/pypi-proxy/simple/`. Por ejemplo en el Dockerfile anterior puede instalar las dependencias con el comando: `pip install -r requirements.txt --index-url http://nexus.prod.uci.cu/repository/pypi-proxy/simple/ --trusted-host nexus.prod.uci.cu`.
 
@@ -52,7 +52,7 @@ docker image build -t my-first-image .
 
 El parámetro `-t <name>` permite asignarle un nombre específico a la imagen. Este comando toma como receta el Dockerfile en el directorio en que se ejecuta, para especificar uno se usa el parámetro `-f <file>`.
 
-Como probablemente usted no tenga la imagen base de Python 3.10 en su repositorio local este comando lo primero que va a hacer es descargarla. Esto puede demorar unos minutos de acuerdo con su conexión. Este proceso se realiza solo una vez, en un futuro siempre que use esa imagen como base será la misma que descargó.
+Como probablemente usted no tenga la imagen base de Python 3.9.5 en su repositorio local este comando lo primero que va a hacer es descargarla. Esto puede demorar unos minutos de acuerdo con su conexión. Este proceso se realiza solo una vez, en un futuro siempre que use esa imagen como base será la misma que descargó.
 
 > 💡 Para descargar una imagen puede usar `docker pull <image:tag>`. Por ejemplo: `docker pull docker.uclv.cu/python:3.9.5`.
 
@@ -246,7 +246,7 @@ En el directorio `fastapi-homework/` se encuentra una aplicación simple escrita
 Usted debe:
 - Escribir el Dockerfile.
   - Use la versión 3.9.5 de Python.
-  - El comando de inicio de la imagen sea `uvicorn main:app`.
+  - Use como comando de inicio de la imagen `uvicorn main:app`.
 - Crear la imagen a partir del Dockerfile.
 - Crear dos contenedores a partir de la imagen anterior.
   - Cada contenedor debe exponer un puerto distinto al host para recibir conexiones.
